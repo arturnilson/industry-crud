@@ -9,12 +9,12 @@ const assetsController = {
       if (id) {
         await assetsModel.findByIdAndUpdate(id, {
           $set: {
-            name: name,
-            description: description,
-            model: model,
-            owner: owner,
-            status: status,
-            health: health,
+            name,
+            description,
+            model,
+            owner,
+            status,
+            health
           },
         });
 
@@ -24,12 +24,12 @@ const assetsController = {
       }
 
       const saveAsset = new assetsModel({
-        name: name,
-        description: description,
-        model: model,
-        owner: owner,
-        status: status,
-        health: health,
+        name,
+        description,
+        model,
+        owner,
+        status,
+        health
       });
 
       await saveAsset.save((err, response) => {
